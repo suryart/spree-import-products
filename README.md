@@ -29,7 +29,7 @@ Once the gem has installed and you have run migrations, you should also run `rai
 Delayed Job also requires that you run 'workers' in the background to pop jobs off the queue and process them.
 This setup may seem like extra work, but believe me, it pays off - with this method, users get an immediate confirmation that their import is on it's way, with a confirmation later on with full details - this is much better than the previous method where the actual processing was completed during the request, with no feedback reaching the user until after the import had finished.
 
-Run `rake jobs:work` to start Delayed Job, and `rake jobs:clear` to clear all queued jobs. Also see delayed_job's Githut page for info on Capistrano support.
+Run `rake jobs:work` to start Delayed Job, and `rake jobs:clear` to clear all queued jobs. You can also start an idependent Delayed Job process in production using: `RAILS_ENV=production ruby script/delayed_job start` and to kill/ terminate run `RAILS_ENV=production ruby script/delayed_job stop`. Also see delayed_job's Githut page for info on Capistrano support.
 
 For more information on Delayed Job, and for help getting a worker running, see the [Github Project Page](https://www.github.com/tobi/delayed_job)
 
@@ -60,7 +60,7 @@ Ttttteeeessssttttiiinnnggg!!
 INSTALLATION
 ==============
 1. Add the gem to your Gemfile, and run bundle install.
-    `gem 'import_products', :git => 'git://github.com/joshmcarthur/spree-import-products.git'` then `bundle install`
+    `gem 'import_products', :git => 'git://github.com/SuryaTripathi/spree-import-products.git'` then `bundle install`
 
 2. 'Install' the extension - copy a migration and an initializer. `rake import_products:install`
 

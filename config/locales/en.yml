@@ -3,6 +3,8 @@ en:
     product_imports: 'Import Products'
     form:
         product_import:
+            index:
+                heading: 'All Imported Prroducts'
             heading: 'Import Products from CSV'
             new:
                 data_file: "Product Data File"

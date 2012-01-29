@@ -1,0 +1,20 @@
+<h2><%= t('form.product_import.index.heading') %></h2>
+<%= link_to "Import or update products", new_admin_product_import_path%>
+<table class="index">
+  <thead>
+    <th>S. No.</th>
+    <th>File Name</th>
+    <th>File Size</th>
+    <th>Uploaded(dd/mm/yyyy HH:MM:SS)</th>
+  </thead>
+  <tbody>
+    <% @product_imports.each_with_index do |product_import,index|%>
+      <tr>
+       <td><%= index+1 %></td>
+       <td><%= product_import.data_file_file_name %></td>
+       <td><%= "#{(product_import.data_file_file_size.to_f/(1024)).round(2)} KB" %></td>
+       <td><%= product_import.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+      </tr>
+     <% end %>
+  </tbody>
+</table>

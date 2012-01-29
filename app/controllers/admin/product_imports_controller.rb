@@ -5,7 +5,8 @@ class Admin::ProductImportsController < Admin::BaseController
   #Feel free to refactor and submit a pull request.
 
   def index
-    redirect_to :action => :new
+    #redirect_to :action => :new Commneted - Because of teh redirect there was no notice message!
+    @product_imports = ProductImport.all.reverse
   end
 
   def new
